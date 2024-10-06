@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernloginPage</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            transition: all 0.5s;
+        }
+        #container{
+            height: 500px;
+            width: 1377px;
+            border: solid rgb(25, 251, 236);
+            display: flex;
+            flex-direction: row;
+
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 50%;
+            /* border: solid red; */
+            align-items: center;
+            justify-content: center;
+        }
+        #form1{
+
+        }
+
+        #links{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        #links a{
+            text-decoration: none;
+            height: 35px;
+            width: 35px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            padding: 5px;
+            font-weight: 500;
+            background-color: transparent;
+            border: 1px solid;
+        }
+        a {
+            text-decoration: none;
+            font-size: 17px;
+            margin-top: 12px;
+            color: black;
+        }
+        #form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: -7px;
+        }
+        #form input{
+            height: 40px;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: rgb(237, 232, 232);
+            border: none;
+        }
+        .btn{
+            height: 35px;
+            width: 100px;
+            background-color: black;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-weight: 600;
+            padding: 10px;
+        }
+        #btn2{
+            margin-top: 15px;
+        }
+        h3{
+            font-size: 15px;
+            font-weight: 100;
+        }
+        #cont{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            height: 490px;
+            width: 626px;
+            background-color: color-mix(in srgb, blue 60%, skyblue 40%);
+            /* border: solid red; */
+            border-radius: 100px 0px 0px 100px;
+            position: absolute;
+            top: 12px;
+            left: 753px;
+            gap: 20px;
+        }
+        #cont h1{
+            font-size: 40px;
+            font-weight: 600;
+
+        }
+        #cont h3{
+            font-size: 20px;
+            font-weight: 100;
+        }
+        #cont .btn3{
+            height: 35px;
+            width: 120px;
+            color: white;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 8px;
+            margin-top: 10px;
+            /* padding: 8px; */
+            font-weight: 600;
+        }
+        #cont1{
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="form1" class="form" >
+            <h1>Sign In</h1>
+            <div id="links">
+                <a href="http://google.com">G+</a>
+                <a href="http://facebook.com"> f</a>
+                <a href="http://twitter.com"> t</a>
+                <a href="http://linkedin.com">in</a>
+            </div>
+            <h3>or use your email password</h3>
+            <form id="form" inputmode="submit">
+                <input type="text" placeholder="Email" class="input">
+                <input type="password" placeholder="Password" class="input">
+            </form>
+            <a href="">Forgot Your Password?</a>
+            <button id="btn1" class="btn" type="submit">SIGN IN</button>
+
+        </div>
+        <div id="form2" class="form">
+            <h1>Create Account</h1>
+            <div id="links">
+                <a href="http://google.com">G+</a>
+                <a href="http://facebook.com"> f</a>
+                <a href="http://twitter.com"> t</a>
+                <a href="http://linkedin.com">in</a>
+            </div>
+            <h3>or use your email for registeration</h3>
+            <form id="form" inputmode="submit">
+                <input type="text" placeholder="Name" class="input">
+                <input type="text" placeholder="Email" class="input">
+                <input type="password" placeholder="Password" class="input">
+            </form>
+            <button id="btn2" class="btn" type="submit" >SIGN UP</button>
+        </div>
+    </div>
+    <div id="cont">
+        <div id="cont1" class="cont">
+            <h1>Welcome Back!</h1>
+            <h3>Enter your personal details to use all of site features</h3>
+            <button id="btn3" class="btn3" onclick="myfunction()"> SIGN IN</button>
+        </div>
+        <div id="cont2" class="cont">
+            <h1>Hello Friends!</h1>
+            <h3>Register with your personal details to use all of site features</h3>
+            <button id="btn4" class="btn3" onclick="myfunction1()"> SIGN UP</button>
+        </div>
+    </div>
+    <script>
+        function myfunction1( ) {
+            var a=document.getElementById("cont")
+            var b=document.getElementById("cont1")
+            var c=document.getElementById("cont2")
+            a.style.translate='-738px';
+            a.style.borderTopLeftRadius='0px';
+            a.style.borderBottomLeftRadius='0px';
+            a.style.borderTopRightRadius='100px';
+            a.style.borderBottomRightRadius='100px';
+            c.style.display='none';
+            b.style.display='block';
+
+        }
+        function myfunction( ) {
+            var a=document.getElementById("cont")
+            var b=document.getElementById("cont1")
+            var c=document.getElementById("cont2")
+            a.style.translate='0px';
+            a.style.borderTopLeftRadius='100px';
+            a.style.borderBottomLeftRadius='100px';
+            a.style.borderTopRightRadius='0px';
+            a.style.borderBottomRightRadius='0px';
+            b.style.display='none';
+            c.style.display='block';
+        }
+      
+    </script>
+</body>
+</html>
