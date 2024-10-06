@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hianime</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(32, 31, 49);
+        }
+        #navbar{
+            margin: 32px 6px 4px 6px;
+            /* border: solid red; */
+        }
+
+        nav #menu-cont{
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        #menubtn{
+            /* border: solid red; */
+            display: none;
+            background-color:transparent;
+            padding: 10px;
+        }
+        .menu li{
+            list-style: none;
+        }
+        .menu li a{
+            text-decoration: none;
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+        }
+        .menu li a:hover{
+            color: rgb(245, 169, 220);
+        }
+        #menu-cont{
+            display: flex;
+        }
+        @media (max-width:780px){
+             nav #menu-cont{
+                display: none;
+            }
+             nav #menubtn{
+                display: block;
+            }
+            
+        }
+
+        #contain{
+            display: flex;
+            flex-direction: column;
+            background-color:rgba(255, 255,255,0.05) ;
+            color: white;
+            height: auto;
+            width: auto;
+            border-radius: 20px;
+            padding: 35px;
+            position: absolute;
+            top: 94px;
+        }
+        #contain #logo img{
+            height: 50px;
+            width: auto;
+            margin: 4px;
+            padding: 10px 0px;
+        }
+        #contain #input1{
+            display: flex;
+        }
+        #contain #logo{
+            display: flex;
+        }
+        #contain #input1 input {
+            height: 40px;
+            /* width: 440px; */
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+           
+        }
+        #contain #sbtn  {
+            /* display: inline-block; */
+            width: 50px;
+            height: auto;
+            background: rgb(245, 169, 220);
+            border: none;
+            border-radius: 10px;
+            position: relative;
+            left: 8px;
+        }
+        #contain #sbtn img{
+            height: 34px;
+        }
+        #contain p{
+            /* width: auto; */
+            font-size: 0.9rem;
+            padding: 10px 0px;
+            line-height: 1.4em;
+        }
+
+        #contain #watchAni{
+            background-color: rgb(245, 169, 220);
+            width: 190px;
+            height: auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            border-radius: 12px;
+        }
+        @media (max-width:520px){
+            #input1 input{
+                width: 100%;
+            }
+            #contain #logo{
+                justify-content: center;
+            }
+            #contain #watchAni{
+                width: 100%;
+            }
+            #contain p{
+                font-size: 13px;
+                width: auto;
+
+            }
+            
+        }
+
+        @media (min-width:520px) and (max-width:780px){
+            #input1 input{
+                width: 375px;
+                
+            }
+            #contain p{
+                width: auto;
+            }
+        }
+        @media (min-width:780px){
+            #input1 input{
+                width: 375px;
+            }
+            #contain p{
+                 width: auto;/* 460 */
+            }
+        }
+        
+        #share{
+            display: flex;
+            background-color: transparent;
+            /* border: solid red; */
+            margin: 10px 10px;
+            padding: 2px;
+            align-items: center;
+        }
+        
+        #share .bt{
+            display: block;
+            font-size: 10px;
+            background-color: aqua;
+            border-radius: 15px;
+            width: 70px;
+            height: 30px;
+            text-align: center;
+            padding: 8px;
+            margin-left: 6px;
+            color: white;
+            border: none;
+            font-weight: 500;
+        }
+
+        #share #bt1{
+            background-color: #0088cc;
+        }
+        #share #bt2{
+            background-color: black;
+        }
+        #share #bt3{
+            background-color: #4267B2;
+        }
+        #share #bt4{
+            background-color: #ff4500;
+        }
+        #share #bt5{
+            background-color: #95D03A;
+            width: 45px;
+        }
+        #share .bt:hover{
+            position: relative;
+            bottom: 10px;
+        }
+        #sh h5{
+            font-size:14px ;
+            margin-bottom: 0px;
+            color: pink;
+        }
+        #sh h6{
+            font-size:12px ;
+            margin-top: 0px;
+            color: white;
+        }
+        #sh1 h5{
+            font-size:16px ;
+            margin-bottom: 0px;
+            color: gray;
+            margin-left: 15px;
+        }
+        #sh1 h6{
+            font-size:9px ;
+            margin-top: 0px;
+            color: gray;
+            margin-left: 15px;
+        }
+        #sh1{
+            position: relative;
+            bottom: 6px;
+            margin-right: 3px;
+        }
+        #grid{
+            display: grid;
+            color: white;
+            background-color: transparent;
+            grid-template-areas:
+            'section section aside'
+            'footer footer footer ';
+            gap: 10px 10px;
+            margin: 10px 10px;
+        }
+        #section{
+            grid-area: section;
+        }
+        #aside{
+            grid-area: aside;
+        }
+        #footer{
+            grid-area: footer;
+        }
+
+        
+        .items{
+            background: transparent;
+            /* border: solid rgb(250, 0, 0); */
+            font-size: 14px;
+        }
+        .items h2{
+            font-size: 1.3em;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font: 100;
+        }
+        .items ul li{
+            margin: 5px 0px;
+        }
+        #aside .boxs {
+            /* display: block; */
+            height: 100px;
+            width: 100%;
+            background-color: rgba(255, 255,255,0.05);
+            margin: 7px;
+            border-radius:18px;
+            padding: 5px;
+        }
+        #aside #rm {
+            height: 35px;
+            width: 100%;
+            background-color: rgba(255, 255,255,0.05);
+            margin: 7px;
+            border-radius:10px;
+            padding: 5px;
+            color: white;
+            border: none;
+        }
+        
+        @media (max-width:980) {
+            #grid{
+                display: grid;
+                color: white;
+                background-color: transparent;
+                grid-template-areas:
+                'section section section'
+                'aside aside aside'
+                'footer footer footer ';
+                gap: 10px 10px;
+                margin: 10px 10px;
+            }
+
+        }
+        @media (max-width:750){
+            #share .bt{
+                display: none;
+            }
+        }
+
+        #xyz{
+            border: none;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+            border-radius: 10px;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            opacity: 0.8;
+            
+        }
+        #xyz li{
+            padding: 5px;
+            font-weight: 600;
+            margin: 8px;
+            font-size: 20px;
+        }
+        header{
+            /* border: solid red; */
+            height: 440px;
+
+        }
+
+        
+
+
+       
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="menu" id="menubtn" onclick="toggleHide()">
+                <li><a href="#">Menu</a></li>
+            </div>
+            <div class="menu" id="menu-cont">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Tv Shows</a></li>
+                <li><a href="#">Most Popular</a></li>
+                <li><a href="#">Top Airing</a></li>
+            </div>
+            
+            <div class="menu" id="menu-xyz">
+                <ul id="xyz">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Tv Shows</a></li>
+                    <li><a href="#">Most Popular</a></li>
+                    <li><a href="#">Top Airing</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="contain">
+            <div id="logo">
+                <img src="ani_img/logo.png" alt="not available">
+            </div>
+            <div id="input1">
+                <input type="text" placeholder="Search anime...">
+                <button id="sbtn"><img src="ani_img/212936_f002_icon (1).png" alt="not available"></button>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque natus inventore fugit consequuntur vitae laboriosam, quisquam placeat incidunt, perferendis quo adipisci? Ipsam mollitia corporis libero, velit obcaecati maiores, commodi, voluptates assumenda blanditiis officia unde!
+            </p>
+                    
+            <button id="watchAni">Watch Anime</button>
+        </section>
+    </header>
+    <section id="share">
+        <div id="sh">
+            <h5>Share Hianime</h5>
+            <h6>to your friends</h6>
+        </div>
+        <div id="sh1">
+            <h5>186k</h5>
+            <h6>Shares</h6>
+        </div>
+        <button class="bt" id="bt1">Telegram</button>
+        <button class="bt" id="bt2">Tweet</button>
+        <button class="bt" id="bt3">Facebook</button>
+        <button class="bt" id="bt4">Instagram</button>
+        <button class="bt" id="bt5">share</button>
+    </section>
+    <section id="grid">
+
+        <div class="items" id="section">
+            <h2 id="a1">HiAnime.to - The best site to watch anime online for Free</h2>
+            <p>Do you know that according to Google, the monthly search volume for anime related topics is up to over 1 Billion times? Anime is famous worldwide and it is no wonder we've seen a sharp rise in the number of free anime streaming sites</p>
+            <p>
+                Just like free online movie streaming sites, anime watching sites are not created equally, some are better than the rest, so we've decided to build HiAnime.to to be one of the best free anime streaming site for all anime fans on the world.
+            </p>
+            <h2 id="a2">1/ What is HiAnime.to?</h2>
+            <p>HiAnime.to is a free site to watch anime and you can even download subbed or dubbed anime in ultra HD quality without any registration or payment. By having only one ads in all kinds, we are trying to make it the safest site for free anime.</p>
+            <h2 id="a3">2/ Is HiAnime.to safe?</h2>
+            <p>Yes we are, we do have only one Ads to cover the server cost and we keep scanning the ads 24/7 to make sure all are clean, If you find any ads that is suspicious, please forward us the info and we will remove it.</p>
+            <h2 id="a3">3/ So what make HiAnime.to the best site to watch anime free online?</h2>
+            <p>Before building HiAnime.to, we've checked many other free anime sites, and learnt from them. We only keep the good things and remove all the bad things from all the competitors, to put it in our HiAnime website. Let's see how we're so confident about being the best site for anime streaming:</p>
+            <ul>
+                <li><strong>Safety:</strong> We try our best to not having harmful ads on HiAnime.</li>
+                <li> <strong>Content library:</strong> Our main focus is anime. You can find here popular, classic, as well as current titles from all genres such as action, drama, kids, fantasy, horror, mystery, police, romance, school, comedy, music, game and many more. All these titles come with English subtitles or are dubbed in many languages.</li>
+                <li> <strong>Quality/Resolution:</strong> All titles are in excellent resolution, the best quality possible. HiAnime.to also has a quality setting function to make sure our users can enjoy streaming no matter how fast your Internet speed is. You can stream the anime at 360p if your Internet is being ridiculous, Or if it is good, you can go with 720p or even 1080p anime.</li>
+                <li><strong>Streaming experience:</strong>  Compared to other anime streaming sites, the loading speed at HiAnime.to is faster. Downloading is just as easy as streaming, you won't have any problem saving the videos to watch offline later.</li>
+                <li> <strong>User interface:</strong> Our UI and UX makes it easy for anyone, no matter how old you are, how long have you been on the Internet. Literally, you can figure out how to navigate our site after a quick look. If you want to watch a specific title, search for it via the search box. If you want to look for suggestions, you can use the site's categories or simply scroll down for new releases.</li>
+            </ul>
+            <p>Thank You!</p>
+            
+            
+    
+        </div>
+        <div class="items" id="aside">
+            <h2>Trending Posts</h2>
+            <div class="boxs"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque laboriosam laborum maxime!</p></div>
+            <div class="boxs"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odio alias fugiat.</p></div>
+            <div class="boxs"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut veritatis dolore!</p></div>
+            <div class="boxs"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi quaerat officia laborum!</p></div>
+            <div class="boxs"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi quaerat officia laborum!</p></div>
+            <div class="boxs"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi quaerat officia laborum!</p></div>
+            <button id="rm">Read More</button>
+            
+    
+        </div>
+        <div class="items" id="footer">
+            <h5>All rights reserved.</h5>
+        </div>
+    </section>
+    <script>
+        function toggleHide() {
+            let xyz=document.getElementById('xyz')
+            let menu=document.getElementById('menu-cont')
+            if (xyz.style.display!='none') {
+                xyz.style.display='none';
+            }else {
+                xyz.style.display='flex';
+            }
+        }
+    </script>
+    
+</body>
+</html>
