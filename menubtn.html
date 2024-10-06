@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu_bar</title>
+    <style>
+        *{
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            width: 100%;
+            border: 2px solid black;
+            background-color: black;
+            
+        }
+        .cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 200px;
+            width: 200px;
+            background-color: transparent;
+            margin: 20px;
+            border: 2px solid white;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px 0px white;
+        }
+        .span
+        {
+            background-color: white;
+            width: 125px;
+            height: 5px;
+        }
+        #box{
+            display: none;
+            height: 200px;
+            width: 100px;
+            background-color: red;
+        }
+        #s4{
+            width: 60px;
+            align-self: flex-start;
+            margin-left: 37px;
+        }
+        #s6{
+            width: 60px;
+            align-self: flex-end;
+            margin-right: 37px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="cont" class="cont" onclick="toggle()">
+            <span class="span" id="s1"></span>
+            <span class="span" id="s2"></span>
+            <span class="span" id="s3"></span>
+        </div>
+        <div id="cont1" class="cont" onclick="toggle1()">
+            <span class="span" id="s4"></span>
+            <span class="span" id="s5"></span>
+            <span class="span" id="s6"></span>
+        </div>
+        <div id="cont2" class="cont" onclick="toggle2()">
+            <span class="span" id="s7"></span>
+            <span class="span" id="s8"></span>
+            <span class="span" id="s9"></span>
+        </div>
+        <div id="box">
+
+        </div>
+    </div>
+    
+</body>
+<script>
+
+    function toggle() {
+        var s1=document.getElementById("s1");
+        var s2=document.getElementById("s2");
+        var s3=document.getElementById("s3"); 
+        var box=document.getElementById("box");
+
+        if (s2.style.display=='none') {
+            s2.style.display='block';
+            s1.style.transform='rotate(0deg)';
+            s3.style.transform='rotate(0deg)';
+
+
+           
+        } else {
+            s2.style.display='none';
+            s1.style.transform='rotate(45deg) translate(20px,20px)';
+            s3.style.transform='rotate(-45deg) translate(20px,-32px)';
+        }
+    }
+    function toggle1() {
+        var s4=document.getElementById("s4");
+        var s5=document.getElementById("s5");
+        var s6=document.getElementById("s6"); 
+
+        if (s5.style.transform=='rotate(-45deg)') {
+            s4.style.transform='rotate(0deg) ';
+            s6.style.transform='rotate(0deg) ';
+            s5.style.transform='rotate(0deg)';
+            
+
+           
+        } else {
+            s4.style.transform='rotate(45deg) translate(30px,10px)';
+            s5.style.transform='rotate(-45deg) ';
+            s6.style.transform='rotate(45deg) translate(-30px,-16px)';
+        }
+    }
+    function toggle2() {
+        var s7=document.getElementById("s7");
+        var s8=document.getElementById("s8");
+        var s9=document.getElementById("s9"); 
+
+        if (s8.style.display=='none') {
+            s7.style.transform='rotate(0deg) ';
+            s9.style.transform='rotate(0deg) ';
+            s8.style.display='block';
+            
+
+           
+        } else {
+            s8.style.display='none';
+            s7.style.transform='rotate(405deg) translate(25px,22px)';
+            s9.style.transform='rotate(-405deg) translate(25px,-22px)';
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: solid black;
+            height: 206px;
+            width: 100%;
+            padding: 4px;
+        }
+        #ball1{
+            background-color: rgb(140, 39, 255);
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            position: relative;
+            top: 10px;
+            left:0;
+            text-align: center;
+        }
+        #ball2{
+            background-color: rgb(98, 239, 194);
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            position: relative;
+            bottom: 90px;
+            left: 400px;
+            text-align: center;
+        }
+        .container:hover #ball1{
+            left: 208px;
+            transition: left 1s ease;
+        }
+        .container:hover #ball2{
+            left: 500px;
+            transition: left 1s ease;
+            transition-delay: 1s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="ball1">Ball-1</div>
+        <div id="ball2">Ball-2</div>
+    </div>
+    
+</body>
+</html>
