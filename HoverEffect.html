@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #container{
+            display: flex;
+            height: 600px;
+            width: 100%;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .cont{
+            height: 300px;
+            width: 100px;
+            filter:grayscale(100%) ;
+            transition: all 0.2s;
+        }
+
+        .cont:hover{
+            width: 200px;
+            filter: grayscale(0%);
+        }
+        #con1{
+            position: relative;
+            top: 50px;
+            background-image:url(aot.jpg);
+        }
+        #con2{
+            position: relative;
+            top: 50px;
+            background-image:url(dead.jpg);
+        }
+        #con3{
+            background-image:url(extra.jpg);
+        }
+        #con4{
+            background-image:url(fastf.jpg);
+        }
+        #con5{
+            background-image:url(jack.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="con3" class="cont"></div>
+        <div id="con1" class="cont"></div>
+        <div id="con4" class="cont"></div>
+        <div id="con2" class="cont"></div>
+        <div id="con5" class="cont"></div>
+    </div>
+    
+</body>
+</html>
