@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #container{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            background-color: black;
+            gap: 10px;
+        }
+        #Calculator{
+            display: flex;
+            flex-direction: column;
+            border: 0.1px solid rgb(9, 190, 246);
+            width: 25%;
+            height: 435px;
+            padding: 20px;
+            border-radius: 20px;
+            gap: 20px;
+            justify-content:end ;
+            box-shadow: rgb(3, 141, 255) 2px 2px 10px 0px;
+        }
+        #display {
+            font-size: 30px;
+            justify-items: end;
+            background-color: black;
+            margin-bottom: 20px;
+            border: none;
+            color: white;
+            box-shadow: white 1px 2px 5px 0px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .button {
+            border-radius: 20px;
+            height: 40px;
+            width: 60px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-style: oblique;
+            margin: 10px;
+            box-shadow: white 1px 1px 2px;
+        }
+        .buttonss {
+            border-radius: 20px;
+            height: 40px;
+            width: 60px;
+            border: none;
+            background-color: rgb(11 10 33 / 90%);
+            color: rgb(9, 190, 246);
+            font-style: oblique;
+            margin: 10px;
+            box-shadow: rgb(3, 141, 255) 2px 2px 10px 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="Calculator">
+            <input type="text" id="display">
+            <div id="buttons">
+                <div>
+                    <button id="ac" class="buttonss" onclick="cleardisplay()">AC</button>
+                    <button id="del" class="buttonss" onclick="deletelast()">DEL</button>
+                    <button id="MOD" class="buttonss" onclick="appendvalue('%')">%</button>
+                    <button id="DIV" class="buttonss" onclick="appendvalue('/')">/</button>
+                </div>
+                <div>
+                    <button id="7" class="button" onclick="appendvalue(7)">7</button>
+                    <button id="8" class="button" onclick="appendvalue(8)">8</button>
+                    <button id="9" class="button" onclick="appendvalue(9)">9</button>
+                    <button id="MULTI" class="buttonss" onclick="appendvalue('*')">X</button>
+                </div>
+                <div>
+                    <button id="6" class="button" onclick="appendvalue(6)">6</button>
+                    <button id="5" class="button" onclick="appendvalue(5)">5</button>
+                    <button id="4" class="button" onclick="appendvalue(4)">4</button>
+                    <button id="MIN" class="buttonss" onclick="appendvalue('-')">-</button>
+                </div>
+                <div>
+                    <button id="3" class="button" onclick="appendvalue(3)">3</button>
+                    <button id="2" class="button" onclick="appendvalue(2)">2</button>
+                    <button id="1" class="button" onclick="appendvalue(1)">1</button>
+                    <button id="ADD" class="buttonss" onclick="appendvalue('+')">+</button>
+                </div>
+                <div>
+                    <button id="00" class="button" onclick="appendvalue('00')">00</button>
+                    <button id="0" class="button" onclick="appendvalue(0)">0</button>
+                    <button id="Dot" class="button" onclick="appendvalue('.')">.</button>
+                    <button id="EQUAL" class="buttonss" onclick="calculate()">=</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function cleardisplay() {
+            document.getElementById('display').value='';
+        }
+        function deletelast() {
+            const result=document.getElementById('display');
+            result.value=result.value.slice(0,-1);
+        }
+        function appendvalue(value) {
+            document.getElementById('display').value+=value;
+        }
+        function calculate() {
+            if((document.getElementById('display').value)=='')
+            {
+                document.getElementById('display').value='ERROR.';
+            }
+            try {
+                const result=eval(document.getElementById('display').value);
+                document.getElementById('display').value=result;
+            } catch (error) {
+                document.getElementById('display').value='ERROR.';
+            }
+        }
+    </script>
+</body>
+</html>
